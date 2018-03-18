@@ -11,12 +11,23 @@
     background-color: rgba(0,0,0,.5);
 
 }
-
+@keyframes modalUp {
+    0% {top:100%;}
+    25% {top:75%;}
+    50% {top:50%;}
+    75% {top:-10%;}
+    100% {top:0%;}
+}
 .modal{
     position: relative;
     width: 600px;
     height: 400px;
     background-color: white;
+    animation-name: modalUp;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+
 }
 
 .modalClose{
