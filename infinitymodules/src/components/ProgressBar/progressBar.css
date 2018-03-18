@@ -1,0 +1,31 @@
+.bar{
+    height:24px;
+    width:500px;
+    background-color:gray;
+    border:solid 1px black;
+    
+    
+    
+}
+
+.info{
+    background-color: royalblue;
+
+}
+.success{
+    background-color: lightgreen;
+}
+
+.warning{
+    background-color: lightpink;
+}
+
+.danger{
+    background-color: red;
+}
+
+.progress{
+    height:24px;
+    color:black;
+}
+

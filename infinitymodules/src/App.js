@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Alert from './components/Alert';
 import Modal from './components/Modal';
+import ProgressBar from './components/ProgressBar';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,8 +35,15 @@ class App extends Component {
           <Modal.Title>ModalTitle</Modal.Title>
           <Modal.Body>ModalBody</Modal.Body>
           <Modal.Footer>ModalFooter</Modal.Footer>
-
         </Modal>
+
+        <ProgressBar
+        progress={25}
+        stripeed={true}
+        animated={true}
+        state="success">
+   
+        </ProgressBar>
       </div>
     );
   }
