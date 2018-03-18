@@ -1,0 +1,24 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles,{bar} from './progressBar.css'
+const ProgressBar = ({progress,striped,animated,state}) => {
+    return(
+        <div className={`${bar}`}>
+            <div style={{width: `${progress}%`}} className={`${styles.progress} ${styles[state]}`}>
+            <div>
+            {progress}%
+            </div>
+            </div>
+        </div>
+    )
+}
+
+
+ProgressBar.propTypes = {
+    progress:PropTypes.number.isRequired,
+    striped: PropTypes.bool.isRequired,
+    animated: PropTypes.bool.isRequired,
+    state: PropTypes.oneOf(['info','success','warning','danger'])
+}
+
+export default ProgressBar;

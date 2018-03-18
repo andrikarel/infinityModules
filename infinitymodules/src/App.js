@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Alert from './components/Alert';
 import Modal from './components/Modal';
+<<<<<<< HEAD
 import NameCard from './components/NameCard';
+=======
+import ProgressBar from './components/ProgressBar';
+>>>>>>> 1249729b5395d1a5559e4a1e9e5db3181bc3bcf7
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,8 +39,13 @@ class App extends Component {
           <Modal.Title>ModalTitle</Modal.Title>
           <Modal.Body>ModalBody</Modal.Body>
           <Modal.Footer>ModalFooter</Modal.Footer>
-
         </Modal>
+        <ProgressBar
+        progress={25}
+        stripeed={true}
+        animated={true}
+        state="success">
+        </ProgressBar>
         <NameCard
           name="Smári"
           email="smari@smari.is"
