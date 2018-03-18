@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {carouselContainer, carouselImage} from './carousel.css';
+import styles,{carouselContainer, carouselImage,carouselButtonLeft,carouselButtonRight} from './carousel.css';
 
 class Carousel extends React.Component {
     constructor(props){
@@ -32,12 +32,12 @@ class Carousel extends React.Component {
 
     render(){
         const {currentImageIndex} = this.state;
-        const {images} = this.props;
+        const {images, size} = this.props;
         return(
-            <div className={carouselContainer}>
-                <button onClick={() => this.previousImage() }>Left</button>
+            <div className={`${carouselContainer} ${styles[`carousel-${size}`]}`}>
+                <button className={carouselButtonLeft} onClick={() => this.previousImage() }> &lt; </button>
                 <img className={carouselImage} src={images[currentImageIndex]} alt="currentImage"/>
-                <button onClick={() => this.nextImage() }>Right</button>
+                <button className={carouselButtonRight} onClick={() => this.nextImage() }> &gt; </button>
             </div>
         )
     }
@@ -45,11 +45,12 @@ class Carousel extends React.Component {
 
 Carousel.propTypes = {
     images: PropTypes.array.isRequired,
-    size: PropTypes.string
+    size: PropTypes.oneOf(['small', 'medium', 'large'])
+
 };
 
 Carousel.defaultProps = {
-    isOpen: false
+    size: "medium"
 };
 
 export default Carousel;

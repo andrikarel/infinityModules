@@ -74,7 +74,23 @@ class App extends Component {
             "http://www.dv.is/media/cache/71/94/71940849425de194f4d8eb846d5afb1f.jpg",
             "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/336754_2920085571921_1880481472_o.jpg?oh=0f5131ee5b8fc29256b7d3037941d59b&oe=5B4675B2"
           ]}
+          size="small"/>
+        <Carousel
+          images={[
+            "http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg",
+            "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg",
+            "http://www.dv.is/media/cache/71/94/71940849425de194f4d8eb846d5afb1f.jpg",
+            "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/336754_2920085571921_1880481472_o.jpg?oh=0f5131ee5b8fc29256b7d3037941d59b&oe=5B4675B2"
+          ]}
           size="medium"/>
+        <Carousel
+          images={[
+            "http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg",
+            "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg",
+            "http://www.dv.is/media/cache/71/94/71940849425de194f4d8eb846d5afb1f.jpg",
+            "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/336754_2920085571921_1880481472_o.jpg?oh=0f5131ee5b8fc29256b7d3037941d59b&oe=5B4675B2"
+          ]}
+          size="large"/>
       </div>
     );
   }
