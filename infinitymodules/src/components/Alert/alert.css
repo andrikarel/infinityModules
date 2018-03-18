@@ -1,0 +1,34 @@
+.alert{
+    padding: 20px;
+    width: 450px;
+    color:white;
+    margin: 10px 0;
+}
+
+.alertTitle{
+    font-size:32px;
+    font-weight: bold;
+}
+.alertText{
+    font-size: 16px;
+}
+
+.info{
+    background-color: royalblue;
+    border-bottom: solid 6px blue;
+}
+
+.success{
+    background-color: lightgreen;
+    border-bottom: solid 6px green;
+}
+
+.warning{
+    background-color: lightpink;
+    border-bottom: solid 6px orange;
+}
+
+.danger{
+    background-color: lightcoral;
+    border-bottom: solid 6px red;
+}
