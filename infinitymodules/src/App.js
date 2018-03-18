@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import Alert from './components/Alert';
 import Modal from './components/Modal';
-<<<<<<< HEAD
 import NameCard from './components/NameCard';
-=======
 import ProgressBar from './components/ProgressBar';
->>>>>>> 1249729b5395d1a5559e4a1e9e5db3181bc3bcf7
 class App extends Component {
   constructor(props) {
     super(props);
