@@ -4,7 +4,7 @@ import styles,{bar} from './progressBar.css'
 const ProgressBar = ({progress,striped,animated,state}) => {
     return(
         <div className={`${bar}`}>
-            <div style={{width: `${progress}%`}} className={`${styles.progress} ${styles[state]}`}>
+            <div style={{width: `${progress}%`}} className={`${styles.progress} ${styles[state]} ${ striped ? styles.striped : ''}`}>
             <div>
             {progress}%
             </div>
@@ -19,6 +19,11 @@ ProgressBar.propTypes = {
     striped: PropTypes.bool.isRequired,
     animated: PropTypes.bool.isRequired,
     state: PropTypes.oneOf(['info','success','warning','danger'])
+}
+
+ProgressBar.defaultProps = {
+    animated: false,
+    striped: false
 }
 
 export default ProgressBar;

@@ -1,31 +1,37 @@
 .bar{
     height:24px;
     width:500px;
-    background-color:gray;
-    border:solid 1px black;
-    
-    
-    
+    background-color:rgb(201, 201, 201);
 }
 
 .info{
-    background-color: royalblue;
+    background-color: #2196F3;
 
 }
 .success{
-    background-color: lightgreen;
+    background-color: #4CAF50;
 }
 
 .warning{
-    background-color: lightpink;
+    background-color: #FFEB3B;
 }
 
 .danger{
-    background-color: red;
+    background-color: #F44336;
+    ;
 }
 
 .progress{
     height:24px;
     color:black;
+}
+.striped{
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.1) 75%,
+    transparent 75%,
+    transparent);
 }
 
