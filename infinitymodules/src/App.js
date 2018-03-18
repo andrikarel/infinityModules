@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Alert from './components/Alert';
 import Modal from './components/Modal';
+import NameCard from './components/NameCard';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -36,6 +37,11 @@ class App extends Component {
           <Modal.Footer>ModalFooter</Modal.Footer>
 
         </Modal>
+        <NameCard
+          name="Smári"
+          email="smari@smari.is"
+          telephone="8571122"
+          imageUrl="http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg"/>
       </div>
     );
   }
