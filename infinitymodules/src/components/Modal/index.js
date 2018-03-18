@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {modalOverlay,modal,modalClose,hidden,modalFooter,modalBody} from './modal.css';
+import {modalTitle,modalOverlay,modal,modalClose,hidden,modalFooter,modalBody} from './modal.css';
 
 const Modal = ({isOpen,onClose,children}) => {
     return (
@@ -15,7 +15,6 @@ const Modal = ({isOpen,onClose,children}) => {
 
 Modal.Title = ({children}) => <div className={modalTitle}>{children}</div>
 Modal.Body = ({children}) => <div className={modalBody}>{children}</div>
-
 Modal.Footer = ({children}) => <div className={modalFooter}>{children}</div>
 
 Modal.propTypes = {
