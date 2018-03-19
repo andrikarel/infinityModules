@@ -13,22 +13,6 @@ class App extends Component {
     const {isModalOpen} = this.state;
     return (
       <div>
-        <Alert type="info">
-          <Alert.Title>Info</Alert.Title>
-          <Alert.Text>info</Alert.Text>
-        </Alert>
-        <Alert type="success">
-          <Alert.Title>Info</Alert.Title>
-          <Alert.Text>info</Alert.Text>
-        </Alert>
-        <Alert type="warning">
-          <Alert.Title>Info</Alert.Title>
-          <Alert.Text>info</Alert.Text>
-        </Alert>
-        <Alert type="danger">
-          <Alert.Title>Info</Alert.Title>
-          <Alert.Text>info</Alert.Text>
-        </Alert>
         
         <button onClick={() => this.setState({isModalOpen:true})}>Open modal</button>
         <Modal 
