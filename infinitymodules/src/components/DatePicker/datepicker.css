@@ -47,11 +47,27 @@
     left: 0;
     position: absolute;
     top: 30%;
+    color: white;
+    background: none;
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
 }
 .rightButton{
     right: 0;
     position: absolute;
     top: 30%;
+    color: white;
+    background: none;
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+}
+.leftButton:focus, .rightButton:focus{
+    outline: none;
+}
+.leftButton:hover, .rightButton:hover{
+    color: rgb(209, 209, 209);
 }
 .days li:hover {
     background-color: rgb(194, 194, 194);

@@ -8,9 +8,9 @@ const NameCard = ({name, email, telephone, imageUrl}) => {
             <div className={namecardImageContainer}>
                 <img className={namecardImage} src={imageUrl} alt='profile'/>
             </div>
-            <div className={namecardName}>Name</div>
-            <div className={namecardInfo}>Email</div>
-            <div className={namecardInfo}>Telephone</div>
+            <div className={namecardName}>{name}</div>
+            <div className={namecardInfo}>{email}</div>
+            <div className={namecardInfo}>{telephone}</div>
         </div>
     )
 }

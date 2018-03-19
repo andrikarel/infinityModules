@@ -17,6 +17,7 @@ class DatePicker extends React.Component {
         super(props);
         this.state = {
             currentDate: new Date(),
+            selectedDate: new Date()
         }
     }
     setSelectedClass(year,month,day){
@@ -27,12 +28,16 @@ class DatePicker extends React.Component {
         }
     }
     checkDate(year,month,day){
-        const {currentDate} = this.state;
-        var years = currentDate.getFullYear() === year;
-        var months = currentDate.getMonth() === month;
-        var days = currentDate.getDate() === day;
+        const {selectedDate} = this.state;
+        var years = selectedDate.getFullYear() === year;
+        var months = selectedDate.getMonth() === month;
+        var days = selectedDate.getDate() === day;
 
         return years&&months&&days;
+    }
+    selectDate(date){
+        this.setState({selectedDate: date});
+        this.props.onDatePick(date.toLocaleString(this.props.locale));
     }
     render(){
         const {currentDate} = this.state;
@@ -43,14 +48,14 @@ class DatePicker extends React.Component {
         return(
             <div className={calendar}>
                 <div className={calendarHeader}>
-                    <button className={leftButton} onClick={() => this.setState({currentDate: new Date(year-1, month, day)})}>Left</button>
+                    <button className={leftButton} onClick={() => this.setState({currentDate: new Date(year-1, month, day)})}>&lt;</button>
                     <p className={calendarHeaderTitle}>{year}</p>
-                    <button className={rightButton} onClick={() => this.setState({currentDate: new Date(year+1, month, day)})}>Right</button>
+                    <button className={rightButton} onClick={() => this.setState({currentDate: new Date(year+1, month, day)})}>&gt;</button>
                 </div>
                 <div className={calendarHeader}>
-                    <button className={leftButton} onClick={() => this.setState({currentDate: new Date(year, month-1, day)})}>Left</button>
+                    <button className={leftButton} onClick={() => this.setState({currentDate: new Date(year, month-1, day)})}>&lt;</button>
                     <p className={calendarHeaderTitle}>{`${MONTH_NAMES[month]}`}</p>
-                    <button className={rightButton} onClick={() => this.setState({currentDate: new Date(year, month+1, day)})}>Right</button>
+                    <button className={rightButton} onClick={() => this.setState({currentDate: new Date(year, month+1, day)})}>&gt;</button>
                 </div>
                 <ul className={weekdays}>
                     <li>Mo</li>
@@ -63,15 +68,17 @@ class DatePicker extends React.Component {
                 </ul>
                 <ul className={days}> 
                     {[...Array(firstDay)].map((o,index) => <li key={index}></li>)}
-                    {[...Array(currentDate.monthDays())].map((o,index) => <li onClick={() => this.setState({currentDate: new Date(year,month,index+1)})} className={this.setSelectedClass(year,month,index+1)} key={index}>{index+1}</li>)}
+                    {[...Array(currentDate.monthDays())].map((o,index) => <li onClick={() => this.selectDate(new Date(year,month,index+1))} className={this.setSelectedClass(year,month,index+1)} key={index}>{index+1}</li>)}
                 </ul>
-                <h1>{this.state.currentDate.toLocaleString()}</h1>
-            </div>
+                </div>
         )
     }
 }
 DatePicker.propTypes = {
     onDatePick: PropTypes.func.isRequired,
     locale: PropTypes.string
+}
+DatePicker.defaultProps = {
+    locale: "is-IS"
 }
 export default DatePicker;

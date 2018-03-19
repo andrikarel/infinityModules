@@ -10,13 +10,14 @@ import DatePicker from './components/DatePicker';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {isModalOpen: false,isClockOpen:false,time:new Date(), date:new Date()};
+    this.state = {isModalOpen: false,isClockOpen:false,time:new Date(), date:""};
   }
   render() {
     const {isModalOpen,isClockOpen} = this.state;
     return (
       <div>
         <button onClick={() => this.setState({isModalOpen:true})}>Open modal</button>
+        <h1>Modal</h1>
         <Modal 
           isOpen={isModalOpen} 
           onClose={() => this.setState({isModalOpen:false})}>
@@ -24,6 +25,7 @@ class App extends Component {
           <Modal.Body>ModalBody</Modal.Body>
           <Modal.Footer>ModalFooter</Modal.Footer>
         </Modal>
+        <h1>Progress Bars</h1>
         <ProgressBar
           progress={25}
           striped={true}
@@ -48,14 +50,15 @@ class App extends Component {
           animated={true}
           state="info">
         </ProgressBar>
+        <h1>Name Card</h1>
         <NameCard
           name="Smári"
           email="smari@smari.is"
           telephone="8571122"
-          imageUrl="http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg"/>
+          imageUrl="https://www.vipcutouts.com/media/com_hikashop/upload/thumbnails/600x760f/jason-statham-celebrity-mask.jpg"/>
+        <h1>Carousels</h1>
         <Carousel
           images={[
-            "http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg",
             "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3EbeoSXmYX0KMuNgX3TqLbMYLiwwLPpDCehoPTMrulnlen2vRg",
             "https://i.imgur.com/0Q9zLi9.jpg?fb"
@@ -63,7 +66,6 @@ class App extends Component {
           size="small"/>
         <Carousel
           images={[
-            "http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg",
             "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3EbeoSXmYX0KMuNgX3TqLbMYLiwwLPpDCehoPTMrulnlen2vRg",
             "https://i.imgur.com/0Q9zLi9.jpg?fb"
@@ -71,32 +73,35 @@ class App extends Component {
           size="medium"/>
         <Carousel
           images={[
-            "http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg",
             "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3EbeoSXmYX0KMuNgX3TqLbMYLiwwLPpDCehoPTMrulnlen2vRg",
             "https://i.imgur.com/0Q9zLi9.jpg?fb"
           ]}
           size="large"/>
-          <Row>
-            <Col size={2}></Col>
-            <Col size={2}></Col>
-            <Col size={2}></Col>
-          </Row>
-          <Row>
-            <Col size={2}></Col>
-            <Col size={3}></Col>
-            <Col size={5}></Col>
-          </Row>
-          <Row>
-            <Col size={4}></Col>
-            <Col size={4}></Col>
-            <Col size={4}></Col>
-          </Row>
-          <TimePicker onTimePick={time=>this.setState({time: time})} format={12}></TimePicker>
-          <h1>{`${this.state.time.getHours()} : ${this.state.time.getMinutes()}`} </h1>
-          <DatePicker
-            onDatePick={date=>this.setState({date: date})}
-            locale="en-EN"/>
+        <h1>Rows and Cols</h1>
+        <Row>
+          <Col size={2}></Col>
+          <Col size={2}></Col>
+          <Col size={2}></Col>
+        </Row>
+        <Row>
+          <Col size={2}></Col>
+          <Col size={3}></Col>
+          <Col size={5}></Col>
+        </Row>
+        <Row>
+          <Col size={4}></Col>
+          <Col size={4}></Col>
+          <Col size={4}></Col>
+        </Row>
+        <h1>Time Picker</h1>
+        <TimePicker onTimePick={time=>this.setState({time: time})} format={12}></TimePicker>
+        <h1>{`${this.state.time.getHours()} : ${this.state.time.getMinutes()}`} </h1>
+        <h1>Date Picker</h1>
+        <DatePicker
+          onDatePick={date=>this.setState({date: date})}
+          locale="is-IS"/>
+        <h1>{this.state.date} </h1>
       </div>
     );
   }
