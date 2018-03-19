@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {isModalOpen: false,isClockOpen:false,time:new Date()};
   }
   render() {
-    const {isModalOpen,isClockOpen,time} = this.state;
+    const {isModalOpen,isClockOpen} = this.state;
     return (
       <div>
         <button onClick={() => this.setState({isModalOpen:true})}>Open modal</button>
@@ -91,8 +91,7 @@ class App extends Component {
             <Col size={4}></Col>
             <Col size={4}></Col>
           </Row>
-          <button onClick={() => this.setState({isClockOpen:true})}>Choose Time</button>
-          <TimePicker isClockOpen={isClockOpen} onClockClose={() => this.setState({isClockOpen:false})} onTimePick={time=>this.setState({time})} format={24}></TimePicker>
+          <TimePicker onTimePick={time=>this.setState({time})} format={12}></TimePicker>
           <h1>{`${this.state.time.getHours()} : ${this.state.time.getMinutes()}`} </h1>
       </div>
     );

@@ -1,20 +1,30 @@
-
-.clockImage {
-    padding:20px;
-    width: 300px;
-}
 .clockButton{
 
 }
 .clock{
-    position: relative;
-    width: 800px;
-    height: 400px;
-    background-color: gray;
-
+  border-radius: 50%;
+  background: white url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+  background-size: 88%;
+  height: 20em;
+  position: relative;
+  width: 20em;
+}
+.clock.simple:after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
 }
 .clockInput{
     text-align: center;
+    width: 20em;
+    padding-top: 20px;
 }
 .hidden{
     display:none !important;
@@ -30,15 +40,32 @@
     cursor: pointer;
 }
 .clockContainer{
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    position: absolute;
-    top: 175%;
-    bottom: 0;
-    left:0;
-    right:0;
-    z-index: 9;
-    background-color: rgba(0,0,0,.5);
-
+    background-color: grey;
+    padding: 20px;
+    display: inline-block;
 }
+.minutesContainer, .hoursContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.hours {
+    background: #000;
+    height: 20%;
+    left: 48.75%;
+    position: absolute;
+    top: 30%;
+    transform-origin: 50% 100%;
+    width: 2.5%;
+}
+.minutes {
+    background: #000;
+    height: 40%;
+    left: 49%;
+    position: absolute;
+    top: 10%;
+    transform-origin: 50% 100%;
+    width: 2%;
+  }
