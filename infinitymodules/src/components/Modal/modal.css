@@ -36,6 +36,15 @@
     right: 10px;
     transition: color 1s;
 }
+.hours{
+    background: #000;
+    height: 20%;
+    left: 48.75%;
+    position: absolute;
+    top: 30%;
+    transform-origin: 50% 100%;
+    width: 2.5%;
+}
 
 .modalClose:hover{
     color: white;

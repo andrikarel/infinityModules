@@ -5,13 +5,14 @@ import ProgressBar from './components/ProgressBar';
 import Carousel from './components/Carousel';
 import Row from './components/Row';
 import Col from './components/Col';
+import TimePicker from './components/TimePicker'
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {isModalOpen: false};
+    this.state = {isModalOpen: false,isClockOpen:false,time:new Date()};
   }
   render() {
-    const {isModalOpen} = this.state;
+    const {isModalOpen,isClockOpen,time} = this.state;
     return (
       <div>
         <button onClick={() => this.setState({isModalOpen:true})}>Open modal</button>
@@ -90,6 +91,9 @@ class App extends Component {
             <Col size={4}></Col>
             <Col size={4}></Col>
           </Row>
+          <button onClick={() => this.setState({isClockOpen:true})}>Choose Time</button>
+          <TimePicker isClockOpen={isClockOpen} onClockClose={() => this.setState({isClockOpen:false})} onTimePick={time=>this.setState({time})} format={24}></TimePicker>
+          <h1>{`${this.state.time.getHours()} : ${this.state.time.getMinutes()}`} </h1>
       </div>
     );
   }

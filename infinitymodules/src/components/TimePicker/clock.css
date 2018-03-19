@@ -1,0 +1,44 @@
+
+.clockImage {
+    padding:20px;
+    width: 300px;
+}
+.clockButton{
+
+}
+.clock{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    background-color: gray;
+
+}
+.clockInput{
+    text-align: center;
+}
+.hidden{
+    display:none !important;
+}
+.clockClose{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: color 1s;
+}
+.clockClose:hover{
+    color: white;
+    cursor: pointer;
+}
+.clockContainer{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    position: absolute;
+    top: 175%;
+    bottom: 0;
+    left:0;
+    right:0;
+    z-index: 9;
+    background-color: rgba(0,0,0,.5);
+
+}
