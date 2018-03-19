@@ -4,6 +4,8 @@ import Modal from './components/Modal';
 import NameCard from './components/NameCard';
 import ProgressBar from './components/ProgressBar';
 import Carousel from './components/Carousel';
+import Row from './components/Row';
+import Col from './components/Col';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -91,6 +93,21 @@ class App extends Component {
             "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/336754_2920085571921_1880481472_o.jpg?oh=0f5131ee5b8fc29256b7d3037941d59b&oe=5B4675B2"
           ]}
           size="large"/>
+          <Row>
+            <Col size={2}></Col>
+            <Col size={2}></Col>
+            <Col size={2}></Col>
+          </Row>
+          <Row>
+            <Col size={2}></Col>
+            <Col size={3}></Col>
+            <Col size={5}></Col>
+          </Row>
+          <Row>
+            <Col size={4}></Col>
+            <Col size={4}></Col>
+            <Col size={4}></Col>
+          </Row>
       </div>
     );
   }
