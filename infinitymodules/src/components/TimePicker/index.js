@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {clockContainer,clockImage,hidden,clock,clockClose,clockInput,hoursContainer, minutesContainer,hours, minutes} from './clock.css';
+import {clockContainer,clockImage,hidden,clock,clockClose,clockInput,hoursContainer, minutesContainer,hours, minutes, clockButton} from './clock.css';
 class TimePicker extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            hours:0,
+            hours:12,
             minutes:0,
             hourMax: 23
         }
@@ -22,18 +22,28 @@ class TimePicker extends React.Component {
     handleChange(evt){
         var value = parseInt(evt.target.value);
         const {hourMax} = this.state;
-        if(evt.target.name ==="hours" && (value > hourMax || value < 0)){
-            this.setState({[evt.target.name]:0});
+        if(evt.target.name ==="hours" && value > hourMax){
+            this.setState({[evt.target.name]:1});
         }
-        else if(evt.target.name ==="minutes" && (value > 59 || value < 0)){
+        else if(evt.target.name ==="minutes" && value > 59){
             this.setState({minutes:0});
             if(this.state.hours < hourMax)
                 this.setState({hours:this.state.hours+=1});
             else
-                this.setState({hours:0});
+                this.setState({hours:1});
 
         }
-        else{
+        else if(evt.target.name ==="hours" && value < 1){
+            this.setState({[evt.target.name]:12});
+        }
+        else if(evt.target.name ==="minutes" && value < 1){
+            this.setState({minutes:59});
+            if(this.state.hours > 1)
+                this.setState({hours:this.state.hours-=1});
+            else
+                this.setState({hours:12});
+
+        }        else{
             this.setState({[evt.target.name]:value})
         }
     }
@@ -70,11 +80,11 @@ class TimePicker extends React.Component {
                     </div> 
                 </article>
                 <div className={clockInput}>
-                    <label>Hours</label>
+                    <label></label>
                         <input type="number" name="hours" placeholder="" value={this.state.hours} onChange={(evt)=>this.handleChange(evt)}/>
-                    <label>Minutes</label>
+                    <label>:</label>
                         <input type="number" name="minutes"  value={this.state.minutes} onChange={(evt)=>this.handleChange(evt)}/>
-                    <button onClick={()=>this.getTime()}>SetTime</button>
+                    <button className={clockButton} onClick={()=>this.getTime()}>Set Time</button>
                 </div>
             </div>
         )

@@ -26,6 +26,9 @@
     width: 20em;
     padding-top: 20px;
 }
+.clockInput > input{
+    width: 50px;
+}
 .hidden{
     display:none !important;
 }
@@ -68,4 +71,8 @@
     top: 10%;
     transform-origin: 50% 100%;
     width: 2%;
+  }
+  .clockButton{
+      margin-top: 20px;
+      width: 100%;
   }
