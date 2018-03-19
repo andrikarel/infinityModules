@@ -1,5 +1,13 @@
 .carouselContainer{
     position: relative;
+    /*non-selectable text: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
 }
 .carouselImage{
     width: 100%;
@@ -30,4 +38,10 @@
     color: white;
     background: transparent;
     border: none;
+}
+.carouselButtonLeft:focus, .carouselButtonRight:focus{
+    outline: none;
+}
+.carouselButtonLeft:hover, .carouselButtonRight:hover{
+    color: rgb(209, 209, 209);
 }

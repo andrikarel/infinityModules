@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Alert from './components/Alert';
 import Modal from './components/Modal';
 import NameCard from './components/NameCard';
 import ProgressBar from './components/ProgressBar';
@@ -15,7 +14,6 @@ class App extends Component {
     const {isModalOpen} = this.state;
     return (
       <div>
-        
         <button onClick={() => this.setState({isModalOpen:true})}>Open modal</button>
         <Modal 
           isOpen={isModalOpen} 
