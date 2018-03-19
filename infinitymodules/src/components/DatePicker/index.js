@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {calendar, calendarHeader,calendarHeaderTitle, leftButton,rightButton, weekdays, days} from './datepicker.css';
+import {calendar, calendarHeader,calendarHeaderTitle, leftButton,rightButton, weekdays, days, active} from './datepicker.css';
 const MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
@@ -11,12 +11,28 @@ Date.prototype.monthDays= function(){
     return d.getDate();
 }
 
+//This was used as a reference for styling and setup: https://www.w3schools.com/howto/howto_css_calendar.asp
 class DatePicker extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            currentDate: new Date()
+            currentDate: new Date(),
         }
+    }
+    setSelectedClass(year,month,day){
+        if(this.checkDate(year,month,day)){
+            return active;
+        }else{
+            return "";
+        }
+    }
+    checkDate(year,month,day){
+        const {currentDate} = this.state;
+        var years = currentDate.getFullYear() === year;
+        var months = currentDate.getMonth() === month;
+        var days = currentDate.getDate() === day;
+
+        return years&&months&&days;
     }
     render(){
         const {currentDate} = this.state;
@@ -33,7 +49,7 @@ class DatePicker extends React.Component {
                 </div>
                 <div className={calendarHeader}>
                     <button className={leftButton} onClick={() => this.setState({currentDate: new Date(year, month-1, day)})}>Left</button>
-                    <p className={calendarHeaderTitle}>{`${MONTH_NAMES[month]} ${currentDate.monthDays()}`}</p>
+                    <p className={calendarHeaderTitle}>{`${MONTH_NAMES[month]}`}</p>
                     <button className={rightButton} onClick={() => this.setState({currentDate: new Date(year, month+1, day)})}>Right</button>
                 </div>
                 <ul className={weekdays}>
@@ -47,8 +63,9 @@ class DatePicker extends React.Component {
                 </ul>
                 <ul className={days}> 
                     {[...Array(firstDay)].map((o,index) => <li key={index}></li>)}
-                    {[...Array(currentDate.monthDays())].map((o,index) => <li key={index}>{index+1}</li>)}
+                    {[...Array(currentDate.monthDays())].map((o,index) => <li onClick={() => this.setState({currentDate: new Date(year,month,index+1)})} className={this.setSelectedClass(year,month,index+1)} key={index}>{index+1}</li>)}
                 </ul>
+                <h1>{this.state.currentDate.toLocaleString()}</h1>
             </div>
         )
     }
