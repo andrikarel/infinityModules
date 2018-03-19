@@ -15,22 +15,6 @@ class App extends Component {
     const {isModalOpen} = this.state;
     return (
       <div>
-        <Alert type="info">
-          <Alert.Title>Info</Alert.Title>
-          <Alert.Text>info</Alert.Text>
-        </Alert>
-        <Alert type="success">
-          <Alert.Title>Info</Alert.Title>
-          <Alert.Text>info</Alert.Text>
-        </Alert>
-        <Alert type="warning">
-          <Alert.Title>Info</Alert.Title>
-          <Alert.Text>info</Alert.Text>
-        </Alert>
-        <Alert type="danger">
-          <Alert.Title>Info</Alert.Title>
-          <Alert.Text>info</Alert.Text>
-        </Alert>
         
         <button onClick={() => this.setState({isModalOpen:true})}>Open modal</button>
         <Modal 
@@ -73,24 +57,24 @@ class App extends Component {
           images={[
             "http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg",
             "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg",
-            "http://www.dv.is/media/cache/71/94/71940849425de194f4d8eb846d5afb1f.jpg",
-            "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/336754_2920085571921_1880481472_o.jpg?oh=0f5131ee5b8fc29256b7d3037941d59b&oe=5B4675B2"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3EbeoSXmYX0KMuNgX3TqLbMYLiwwLPpDCehoPTMrulnlen2vRg",
+            "https://i.imgur.com/0Q9zLi9.jpg?fb"
           ]}
           size="small"/>
         <Carousel
           images={[
             "http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg",
             "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg",
-            "http://www.dv.is/media/cache/71/94/71940849425de194f4d8eb846d5afb1f.jpg",
-            "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/336754_2920085571921_1880481472_o.jpg?oh=0f5131ee5b8fc29256b7d3037941d59b&oe=5B4675B2"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3EbeoSXmYX0KMuNgX3TqLbMYLiwwLPpDCehoPTMrulnlen2vRg",
+            "https://i.imgur.com/0Q9zLi9.jpg?fb"
           ]}
           size="medium"/>
         <Carousel
           images={[
             "http://sguru.org/wp-content/uploads/2017/06/cool-anonymous-profile-pictures-1699946_orig.jpg",
             "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg",
-            "http://www.dv.is/media/cache/71/94/71940849425de194f4d8eb846d5afb1f.jpg",
-            "https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/336754_2920085571921_1880481472_o.jpg?oh=0f5131ee5b8fc29256b7d3037941d59b&oe=5B4675B2"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3EbeoSXmYX0KMuNgX3TqLbMYLiwwLPpDCehoPTMrulnlen2vRg",
+            "https://i.imgur.com/0Q9zLi9.jpg?fb"
           ]}
           size="large"/>
           <Row>
