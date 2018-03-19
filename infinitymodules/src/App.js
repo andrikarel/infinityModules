@@ -5,11 +5,12 @@ import ProgressBar from './components/ProgressBar';
 import Carousel from './components/Carousel';
 import Row from './components/Row';
 import Col from './components/Col';
-import TimePicker from './components/TimePicker'
+import TimePicker from './components/TimePicker';
+import DatePicker from './components/DatePicker';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {isModalOpen: false,isClockOpen:false,time:new Date()};
+    this.state = {isModalOpen: false,isClockOpen:false,time:new Date(), date:new Date()};
   }
   render() {
     const {isModalOpen,isClockOpen} = this.state;
@@ -91,8 +92,11 @@ class App extends Component {
             <Col size={4}></Col>
             <Col size={4}></Col>
           </Row>
-          <TimePicker onTimePick={time=>this.setState({time})} format={12}></TimePicker>
+          <TimePicker onTimePick={time=>this.setState({time: time})} format={12}></TimePicker>
           <h1>{`${this.state.time.getHours()} : ${this.state.time.getMinutes()}`} </h1>
+          <DatePicker
+            onDatePick={date=>this.setState({date: date})}
+            locale="en-EN"/>
       </div>
     );
   }
