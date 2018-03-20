@@ -6,8 +6,8 @@ const MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
 ];
 
 //As seen on https://stackoverflow.com/questions/1184334/get-number-days-in-a-specified-month-using-javascript
-Date.prototype.monthDays= function(){
-    var d= new Date(this.getFullYear(), this.getMonth()+1, 0);
+const monthDays= function(date){
+    var d= new Date(date.getFullYear(), date.getMonth()+1, 0);
     return d.getDate();
 }
 
@@ -68,7 +68,7 @@ class DatePicker extends React.Component {
                 </ul>
                 <ul className={days}> 
                     {[...Array(firstDay)].map((o,index) => <li key={index}></li>)}
-                    {[...Array(currentDate.monthDays())].map((o,index) => <li onClick={() => this.selectDate(new Date(year,month,index+1))} className={this.setSelectedClass(year,month,index+1)} key={index}>{index+1}</li>)}
+                    {[...Array(monthDays(currentDate))].map((o,index) => <li onClick={() => this.selectDate(new Date(year,month,index+1))} className={this.setSelectedClass(year,month,index+1)} key={index}>{index+1}</li>)}
                 </ul>
                 </div>
         )

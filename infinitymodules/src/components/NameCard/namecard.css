@@ -1,7 +1,8 @@
 .namecard{
     width: 600px;
     height: 300px;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(219, 219, 219);
+    border-radius: 10px;
 }
 
 .namecardImageContainer{

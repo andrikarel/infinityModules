@@ -5,9 +5,6 @@ const ProgressBar = ({progress,striped,animated,state}) => {
     return(
         <div className={`${bar}`}>
             <div style={{width: `${progress}%`}} className={`${styles.progress} ${styles[state]} ${ striped ? styles.striped : ''}`}>
-            <div>
-            {progress}%
-            </div>
             </div>
         </div>
     )

@@ -7,17 +7,21 @@ import Row from './components/Row';
 import Col from './components/Col';
 import TimePicker from './components/TimePicker';
 import DatePicker from './components/DatePicker';
+import Tabs from './components/Tabs';
+import Tab from './components/Tab';
+import CartoonNetworkSpinner from './components/CartoonNetworkSpinner';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {isModalOpen: false,isClockOpen:false,time:new Date(), date:""};
+    this.state = {isModalOpen: false,isClockOpen:false,time:new Date(), date:"",tab:1};
   }
   render() {
-    const {isModalOpen,isClockOpen} = this.state;
+    const {isModalOpen} = this.state;
+    console.log(this.state.tab);
     return (
       <div>
-        <button onClick={() => this.setState({isModalOpen:true})}>Open modal</button>
         <h1>Modal</h1>
+        <button onClick={() => this.setState({isModalOpen:true})}>Open modal</button>
         <Modal 
           isOpen={isModalOpen} 
           onClose={() => this.setState({isModalOpen:false})}>
@@ -54,8 +58,8 @@ class App extends Component {
         <NameCard
           name="Smári"
           email="smari@smari.is"
-          telephone="8571122"
-          imageUrl="https://www.vipcutouts.com/media/com_hikashop/upload/thumbnails/600x760f/jason-statham-celebrity-mask.jpg"/>
+          telephone="123 4567"
+          imageUrl="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"/>
         <h1>Carousels</h1>
         <Carousel
           images={[
@@ -102,6 +106,41 @@ class App extends Component {
           onDatePick={date=>this.setState({date: date})}
           locale="is-IS"/>
         <h1>{this.state.date} </h1>
+        <h1>Tabs</h1>
+        <Tabs
+          theme="dark"
+          layout="horizontal"
+          onSelect={newTab => this.setState({tab: newTab})}
+          currentSelectedTab={this.state.tab}
+          >
+          <Tab selectionKey={1} title="Tab 1">
+            Content 1
+          </Tab>
+          <Tab selectionKey={2} title="Tab 2">
+            Content 2
+          </Tab>
+          <Tab selectionKey={3} title="Tab 3">
+            Content 3
+          </Tab>
+        </Tabs>
+        <Tabs
+          theme="dark"
+          layout="vertical"
+          onSelect={newTab => this.setState({tab: newTab})}
+          currentSelectedTab={this.state.tab}
+          >
+          <Tab selectionKey={1} title="Tab 1">
+            Content 1
+          </Tab>
+          <Tab selectionKey={2} title="Tab 2">
+            Content 2
+          </Tab>
+          <Tab selectionKey={3} title="Tab 3">
+            Content 3
+          </Tab>
+        </Tabs>
+        <CartoonNetworkSpinner
+          interval={2} />
       </div>
     );
   }

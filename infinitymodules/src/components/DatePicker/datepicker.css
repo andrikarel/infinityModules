@@ -71,12 +71,10 @@
 }
 .days li:hover {
     background-color: rgb(194, 194, 194);
-    border-radius: 5px;
     cursor: pointer;
     color: white;
 }
 .active{
     background-color: rgb(66, 66, 177);
-    border-radius: 5px;
     color: white;
 }

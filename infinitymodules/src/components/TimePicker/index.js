@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {clockContainer,clockImage,hidden,clock,clockClose,clockInput,hoursContainer, minutesContainer,hours, minutes, clockButton} from './clock.css';
+import {clockContainer,clock,clockInput,hoursContainer, minutesContainer,hours, minutes, clockButton} from './clock.css';
 class TimePicker extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             hours:12,
             minutes:0,
-            hourMax: 23
-        }
-        if(this.props.format === 12){
-            this.state.hourMax = 12;
+            hourMax: this.props.format === 12 ? 12: 23
         }
     }
     getTime(){
@@ -20,7 +17,7 @@ class TimePicker extends React.Component {
         this.props.onTimePick(d);
     }
     handleChange(evt){
-        var value = parseInt(evt.target.value);
+        var value = parseInt(evt.target.value,10);
         const {hourMax} = this.state;
         if(evt.target.name ==="hours" && value > hourMax){
             this.setState({[evt.target.name]:1});
@@ -28,7 +25,7 @@ class TimePicker extends React.Component {
         else if(evt.target.name ==="minutes" && value > 59){
             this.setState({minutes:0});
             if(this.state.hours < hourMax)
-                this.setState({hours:this.state.hours+=1});
+                this.setState({hours:this.state.hours+1});
             else
                 this.setState({hours:1});
 
@@ -39,7 +36,7 @@ class TimePicker extends React.Component {
         else if(evt.target.name ==="minutes" && value < 1){
             this.setState({minutes:59});
             if(this.state.hours > 1)
-                this.setState({hours:this.state.hours-=1});
+                this.setState({hours:this.state.hours-1});
             else
                 this.setState({hours:12});
 
